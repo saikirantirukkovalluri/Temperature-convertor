@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        body{
+           background-image: url("https://www.pixelstalk.net/wp-content/uploads/2016/09/3D-Nature-Images-Free-Download-HD.jpg");
+           background-size: cover;
+        }
+      .box {
+        width: 500px;
+        background: transparent;
+        background-position: center;
+        padding: 30px;
+        transform: translate(130%, 70%);
+        box-shadow: 10px 15px 25px rgba(0, 0, 0, 0.5);
+        border-radius: 20px;
+
+      }
+      .inputbox input {
+        height: 20px;
+      }
+      .inputbox select {
+        height: 25px;
+        width: 100px;
+      }
+      button{
+        width:fit-content;
+        border-radius: 10px;
+        background-color: lightblue;
+      
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <h1>Temprature converter</h1>
+      <div class="inputbox">
+        <input
+          type="number"
+          id="degree"
+        />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <select id="temp">
+          <option></option>
+          <option value="cel">Celcius</option>
+          <option value="far">Farenheit</option>
+        </select>
+        <br />
+        <br />
+        <div class="submit">
+          <center>
+            <button
+              type="button"
+              onclick="k(document.getElementById('degree').value)"
+            >Convert
+            </button>
+          </center>
+        </div>
+        <p>Tempertaure Value:</p>
+        <p id="display"></p>
+      </div>
+    </div>
+    <script>
+      function k(l) {
+        var x = document.getElementById("temp").value;
+        var h = 0;
+        if (x == "cel") {
+          h = l * (9 / 5) + 32;
+        } else {
+          h = (l - 32) * (5 / 9);
+        }
+        document.getElementById("display").innerHTML = h;
+      }
+    </script>
+  </body>
+</html>
